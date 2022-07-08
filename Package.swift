@@ -17,5 +17,5 @@ let package = Package(name: "SwiftyRSA",
                                 // .tvOS,
                                 // .watchOS]))]),
                         .testTarget(name: "SwiftyRSATests",
-                                    dependencies: ["SwiftyRSA"]],
-                                    swiftLanguageVersions: [.v5])
+                                    dependencies: ["SwiftyRSA"])],
+                      swiftLanguageVersions: [.v5])
