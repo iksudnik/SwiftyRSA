@@ -11,14 +11,11 @@ let package = Package(name: "SwiftyRSA",
                       dependencies: [
                         // Dependencies declare other packages that this package depends on.
                       ],
-                      targets: [.target(name: "SwiftyRSA",
-                                        path: "Source",
-                                        publicHeadersPath: "Supporting Files"), //,
+                      targets: [.target(name: "SwiftyRSA"), //,
                                 //linkerSettings: [.linkedFramework("Security",
                                 // .when(platforms: [.iOS,
                                 // .tvOS,
                                 // .watchOS]))]),
                         .testTarget(name: "SwiftyRSATests",
-                                    dependencies: ["SwiftyRSA"],
-                                    path: "Tests")],
-                      swiftLanguageVersions: [.v5])
+                                    dependencies: ["SwiftyRSA"]],
+                                    swiftLanguageVersions: [.v5])
