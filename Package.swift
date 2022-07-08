@@ -2,29 +2,19 @@
 
 import PackageDescription
 
-let package = Package(
-    name: "SwiftyRSA",
-    platforms: [.iOS(.v11),
-                .tvOS(.v11),
-                .watchOS(.v5)],
-    products: [
-        .library(
-            name: "SwiftyRSA",
-            targets: ["SwiftyRSA"]),
-    ],
-    dependencies: [],
-    targets: [
-        .target(
-            name: "SwiftyRSA",
-            path: "Source",
-            linkerSettings: [.linkedFramework("Security",
-                                              .when(platforms: [.iOS,
-                                                                .tvOS,
-                                                                .watchOS]))]),
-        .testTarget(
-            name: "SwiftyRSATests",
-            path: "Tests",
-            dependencies: ["SwiftyRSA"]),
-    ],
-    swiftLanguageVersions: [.v5]
-)
+let package = Package(name: "SwiftyRSA",
+                      platforms: [.iOS(.v11),
+                                  .tvOS(.v11),
+                                  .watchOS(.v5)],
+                      products: [.library(name: "SwiftyRSA",
+                                          targets: ["SwiftyRSA"])],
+                      targets: [.target(name: "SwiftyRSA",
+                                        path: "Source",
+                                        linkerSettings: [.linkedFramework("Security",
+                                                                          .when(platforms: [.iOS,
+                                                                                            .tvOS,
+                                                                                            .watchOS]))]),
+                                .testTarget(name: "SwiftyRSATests",
+                                            dependencies: ["SwiftyRSA"],
+                                            path: "Tests")],
+                      swiftLanguageVersions: [.v5])
