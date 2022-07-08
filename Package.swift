@@ -8,6 +8,9 @@ let package = Package(name: "SwiftyRSA",
                                   .watchOS(.v5)],
                       products: [.library(name: "SwiftyRSA",
                                           targets: ["SwiftyRSA"])],
+                      dependencies: [
+                          // Dependencies declare other packages that this package depends on.
+                      ],
                       targets: [.target(name: "SwiftyRSA",
                                         path: "Source")], //,
                                         //linkerSettings: [.linkedFramework("Security",
